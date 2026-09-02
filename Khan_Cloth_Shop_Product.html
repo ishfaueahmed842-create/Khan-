@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khan Cloth Shop - Premium Lawn 3PC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: #f7f5f2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 16px;
+        }
+
+        .header {
+            width: 100%;
+            max-width: 420px;
+            background: #111;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .logo span {
+            color: #d4a017;
+        }
+
+        .menu {
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            background: #f7f5f2;
+            padding: 30px 16px 40px;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 15px;
+            color: #888;
+            margin-bottom: 28px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .fabric-image {
+            height: 280px;
+            background: #e8e4df;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .fabric-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .fabric-image.no-img {
+            background: #c41e3a;
+            background-image: 
+                linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%),
+                linear-gradient(45deg, rgba(0,0,0,0.1) 0%, transparent 60%);
+        }
+
+        .fabric-image.no-img::after {
+            content: "📷 Photo Add Karein";
+            position: absolute;
+            color: rgba(255,255,255,0.9);
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: #7a1f2b;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            z-index: 2;
+        }
+
+        .product-info {
+            padding: 18px 20px 22px;
+        }
+
+        .product-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+        }
+
+        .product-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: #c41e3a;
+            margin-bottom: 6px;
+        }
+
+        .product-desc {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 18px;
+        }
+
+        .order-btn {
+            display: inline-block;
+            background: #111;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .order-btn:hover {
+            background: #333;
+        }
+
+        .whatsapp {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .whatsapp svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .upload-guide {
+            margin-top: 30px;
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+            max-width: 420px;
+            width: 100%;
+        }
+
+        .upload-guide h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #111;
+        }
+
+        .upload-guide code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">Khan <span>Cloth Shop</span></div>
+        <div class="menu">☰</div>
+    </div>
+
+    <div class="container">
+        <h1 class="section-title">Featured Products</h1>
+        <p class="section-subtitle">Humari best selling items</p>
+
+        <div class="product-card">
+            <div class="fabric-image" id="productImage">
+                <img src="images/product1.jpg" alt="Premium Lawn 3PC" 
+                     onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
+                <span class="badge">New</span>
+            </div>
+
+            <div class="product-info">
+                <div class="product-title">Premium Lawn 3PC</div>
+                <div class="product-price">Rs. 3,500</div>
+                <div class="product-desc">High quality digital printed lawn</div>
+                <a href="#" class="order-btn">Order Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="whatsapp">
+        <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </div>
+
+    <div class="upload-guide">
+        <h3>📷 Photo Kaise Lagayein:</h3>
+        <p>1. <code>images</code> folder mein apni photo dalen</p>
+        <p>2. Photo ka naam rakhein: <code>product1.jpg</code></p>
+        <p>3. Browser refresh karein — photo show ho jayegi!</p>
+        <p style="margin-top:10px;">Agar photo nahi hai to red background dikhega.</p>
+    </div>
+
+</body>
+</html>

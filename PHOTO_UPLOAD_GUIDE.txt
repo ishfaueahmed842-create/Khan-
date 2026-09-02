@@ -1,0 +1,59 @@
+========================================
+  KHAN CLOTH SHOP - PHOTO UPLOAD GUIDE
+========================================
+
+Aap ab asani se product photos laga sakte hain!
+
+----------------------------------------
+STEP 1: Photos Taiyar Karein
+----------------------------------------
+- Apni product photos mobile ya computer se lein
+- Photos ko rename karein:
+    product1.jpg  →  Premium Lawn 3PC
+    product2.jpg  →  Khaddar Winter Suit
+    product3.jpg  →  Gents Wash & Wear
+    product4.jpg  →  Embroidered Fancy Suit
+    product5.jpg  →  Linen 3 Piece
+    product6.jpg  →  Kids Fancy Dress
+
+- Best size: 800 x 800 pixels (square) ya 800 x 1000
+- Format: JPG, PNG, WEBP sab chalega
+
+----------------------------------------
+STEP 2: Images Folder Mein Dalen
+----------------------------------------
+Website folder mein "images" naam ka folder hai.
+
+Uske andar apni 6 photos copy karein:
+
+images/
+   ├── product1.jpg
+   ├── product2.jpg
+   ├── product3.jpg
+   ├── product4.jpg
+   ├── product5.jpg
+   └── product6.jpg
+
+----------------------------------------
+STEP 3: Browser Mein Check Karein
+----------------------------------------
+index.html file ko double-click karke browser mein kholen.
+Aapki photos products pe show ho jayengi!
+
+Agar photo nahi dikhe to:
+- File name exact same hona chahiye (product1.jpg etc.)
+- images folder sahi jagah pe hona chahiye
+
+----------------------------------------
+EXTRA: Photo Change Karna
+----------------------------------------
+Jab bhi naya photo lagana ho:
+1. Nayi photo ko same name se save karein (jaise product1.jpg)
+2. Purani photo ki jagah replace kar dein
+3. Browser refresh karein
+
+----------------------------------------
+Note:
+----------------------------------------
+Agar aapko zyada products add karne hain to mujhe bata dein,
+main website mein aur products + photos ka option add kar doonga.
