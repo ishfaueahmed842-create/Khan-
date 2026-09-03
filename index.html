@@ -21,6 +21,10 @@
                 <li><a href="#products">Products</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li id="adminNavItem" style="display:none;"><a href="#admin">Admin Panel</a></li>
+                <li id="authNavItem">
+                    <a href="#" id="loginBtn"><i class="fas fa-user"></i> Login</a>
+                </li>
             </ul>
             <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
@@ -90,90 +94,79 @@
                 <h2>Featured Products</h2>
                 <p>Humari best selling items</p>
             </div>
-            <div class="product-grid">
+            <div id="loginRequiredMsg" class="login-required" style="display:none;">
+                <i class="fas fa-lock"></i>
+                <h3>Products dekhne ke liye Login karein</h3>
+                <p>Customer account se login karein taake aap clothes ki real pictures dekh sakein</p>
+                <button class="btn btn-primary" onclick="openAuthModal('login')">Login / Register</button>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+        </div>
+    </section>
 
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="images/product1.jpg" alt="Premium Lawn 3PC" onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
-                        <span class="badge">New</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Premium Lawn 3PC</h3>
-                        <p class="price">Rs. 3,500</p>
-                        <p class="desc">High quality digital printed lawn</p>
-                        <a href="#contact" class="btn-sm">Order Now</a>
-                    </div>
+    <!-- Admin Panel -->
+    <section id="admin" class="admin-panel" style="display:none;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Admin Panel</h2>
+                <p>Products manage karein – photos upload karein</p>
+            </div>
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="add">Add Product</button>
+                <button class="admin-tab" data-tab="manage">Manage Products</button>
+            </div>
+            <div id="addProductTab" class="admin-tab-content active">
+                <div class="admin-form-card">
+                    <form id="addProductForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Product Name</label>
+                                <input type="text" id="productName" placeholder="e.g. Premium Lawn 3PC" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Price (Rs.)</label>
+                                <input type="number" id="productPrice" placeholder="3500" required min="1">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Old Price (optional - for Sale)</label>
+                                <input type="number" id="productOldPrice" placeholder="5500" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label>Badge</label>
+                                <select id="productBadge">
+                                    <option value="">None</option>
+                                    <option value="New">New</option>
+                                    <option value="Sale">Sale</option>
+                                    <option value="Hot">Hot</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea id="productDesc" rows="2" placeholder="High quality digital printed lawn" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Image</label>
+                            <div class="image-upload-area" id="imageUploadArea">
+                                <input type="file" id="productImage" accept="image/*" required>
+                                <div class="upload-placeholder">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Click to upload or drag image here</p>
+                                    <span>JPG, PNG (max 2MB recommended)</span>
+                                </div>
+                                <img id="imagePreview" style="display:none;" alt="Preview">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Add Product
+                        </button>
+                    </form>
                 </div>
-
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="images/product2.jpg" alt="Khaddar Winter Suit" onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
-                        <span class="badge sale">Sale</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Khaddar Winter Suit</h3>
-                        <p class="price">Rs. 4,200 <del>Rs. 5,500</del></p>
-                        <p class="desc">Warm & soft export quality</p>
-                        <a href="#contact" class="btn-sm">Order Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="images/product3.jpg" alt="Gents Wash & Wear" onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
-                    </div>
-                    <div class="product-info">
-                        <h3>Gents Wash & Wear</h3>
-                        <p class="price">Rs. 2,800</p>
-                        <p class="desc">Premium quality kurta shalwar</p>
-                        <a href="#contact" class="btn-sm">Order Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="images/product4.jpg" alt="Embroidered Fancy Suit" onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
-                        <span class="badge">Hot</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Embroidered Fancy Suit</h3>
-                        <p class="price">Rs. 6,500</p>
-                        <p class="desc">Heavy embroidery with net dupatta</p>
-                        <a href="#contact" class="btn-sm">Order Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="images/product5.jpg" alt="Linen 3 Piece" onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
-                    </div>
-                    <div class="product-info">
-                        <h3>Linen 3 Piece</h3>
-                        <p class="price">Rs. 3,900</p>
-                        <p class="desc">Soft linen for all seasons</p>
-                        <a href="#contact" class="btn-sm">Order Now</a>
-                    </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="images/product6.jpg" alt="Kids Fancy Dress" onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
-                        <span class="badge sale">Sale</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Kids Fancy Dress</h3>
-                        <p class="price">Rs. 1,800 <del>Rs. 2,400</del></p>
-                        <p class="desc">Comfortable & stylish</p>
-                        <a href="#contact" class="btn-sm">Order Now</a>
-                    </div>
-                </div>
-
+            </div>
+            <div id="manageProductTab" class="admin-tab-content">
+                <div id="adminProductList" class="admin-product-list"></div>
             </div>
         </div>
     </section>
@@ -313,6 +306,51 @@
     <a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal">
+            <button class="modal-close" id="closeAuthModal">&times;</button>
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-mode="login">Login</button>
+                <button class="modal-tab" data-mode="register">Register</button>
+            </div>
+            <form id="loginForm" class="auth-form active">
+                <h3>Welcome Back</h3>
+                <p class="auth-subtitle">Apna account se login karein</p>
+                <div class="form-group">
+                    <label>Username / Email</label>
+                    <input type="text" id="loginUsername" placeholder="username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+                <div class="role-hint">
+                    <p><strong>Admin:</strong> admin / admin123</p>
+                    <p><strong>Customer:</strong> Register karke login karein</p>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+            <form id="registerForm" class="auth-form">
+                <h3>Create Account</h3>
+                <p class="auth-subtitle">Naya customer account banayein</p>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="regName" placeholder="Aapka naam" required>
+                </div>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="regUsername" placeholder="username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="regPassword" placeholder="••••••••" required minlength="4">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Register as Customer</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
